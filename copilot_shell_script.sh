@@ -45,9 +45,9 @@ fi
 echo "Everything is working let update the assignement"
 sed -i "s/^ASSIGNMENT=.*/ASSIGNMENT=\"$Add_Assignment\"/" "$config_path"
 
-echo " updated made successfully your adding new assginment: $Add_Assignment"
+echo "Updated made successfully your adding new assginment: $Add_Assignment"
 
 # run the startup again to check for the update assignment that add by the config.env
 bash "$submission_dir/startup.sh"
 
-echo "Done"
+echo "Sucessfully rerun the startup to check if it updated"

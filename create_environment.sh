@@ -11,11 +11,11 @@ fi
 
 submission_dir="submission_reminder_$myName"
 mkdir -p "$submission_dir/config" "$submission_dir/modules" "$submission_dir/app" "$submission_dir/assets"
+echo "the directory created and subdirectory created successful"
 
 ## create the main files inside the Subdirectory and insert the content into the files
 
 # config file
-
 cat > "$submission_dir/config/config.env" << 'EOF'
 # This is the config file
 ASSIGNMENT="Shell Navigation"
@@ -48,7 +48,6 @@ function check_submissions {
 EOF
 
 # reminder file
-
 cat > "$submission_dir/app/reminder.sh" << 'EOF'
 
 #!/bin/bash
@@ -68,15 +67,18 @@ check_submissions $submissions_file
 EOF
 
 # submisssion file
-
 cat > "$submission_dir/assets/submissions.txt" << 'EOF'
 student, assignment, submission status
 Chinemerem, Shell Navigation, not submitted
 Chiagoziem, Git, submitted
 Divine, Shell Navigation, not submitted
 Anissa, Shell Basics, submitted
+Nasir, Shell Loop, not submitted
+Ahmad, Python If condition, submitted
+Saher, Shell Navigation, not submitted
 EOF
 
+echo "All the requriment file created successful inside the directory : $submission_dir"
 ## End of creating files
 
 # Implement the startup file
