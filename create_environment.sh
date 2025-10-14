@@ -2,10 +2,17 @@
 
 # first prompt the user for their name then create the main directory and subdirectory
 read -p "enter your name:" myName
+
+# check if the user enter and is not empty
+if [ -z	"$myName" ]; then
+	echo "You need to enter a name for the app to work"
+	exit 1
+fi
+
 submission_dir="submission_reminder_$myName"
 mkdir -p "$submission_dir/config" "$submission_dir/modules" "$submission_dir/app" "$submission_dir/assets"
 
-# create the main files inside the Subdirectory and insert the content into the files
+## create the main files inside the Subdirectory and insert the content into the files
 
 # config file
 
@@ -70,7 +77,7 @@ Divine, Shell Navigation, not submitted
 Anissa, Shell Basics, submitted
 EOF
 
-# End of creating files
+## End of creating files
 
 # Implement the startup file
 cat > "$submission_dir/startup.sh" << EOF
