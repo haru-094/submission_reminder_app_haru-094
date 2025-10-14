@@ -5,7 +5,7 @@ read -p "enter your name:" myName
 submission_dir="submission_reminder_$myName"
 mkdir -p "$submission_dir/config" "$submission_dir/modules" "$submission_dir/app" "$submission_dir/assets"
 
-# ----- create the main files inside the Subdirectory and insert the content into the files -----
+# create the main files inside the Subdirectory and insert the content into the files
 
 # config file
 
@@ -70,5 +70,17 @@ Divine, Shell Navigation, not submitted
 Anissa, Shell Basics, submitted
 EOF
 
-# ------ End of creating files ------
+# End of creating files
+
+# Implement the startup file
+cat > "$submission_dir/startup.sh" << EOF
+#!/bin/bash
+bash "$submission_dir/app/reminder.sh"
+EOF
+
+# make all the file with extinsion .sh executable to run the program
+chmod +x $submission_dir/app/reminder.sh $submission_dir/modules/functions.sh $submission_dir/startup.sh
+
+# run the startup
+bash $submission_dir/startup.sh
 
