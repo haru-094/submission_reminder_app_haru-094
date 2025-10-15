@@ -20,6 +20,9 @@ run create_environment.sh to make the structure this will ask for name that will
 ```
 2. Updated the assignment
 this will modifiy the assignment and add new one and in first will ask for the name to check if the directory is exist with that name.
+```
+./copilot_shell_script.sh
+```
 
 3. Then it will ask for the new assignment to make the modifiy.
 
